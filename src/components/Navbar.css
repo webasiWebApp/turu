@@ -1,0 +1,238 @@
+/* src/components/Navbar.css */
+
+.turu-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  /* Background/backdrop/shadow are handled by framer-motion inline styles in Navbar.tsx */
+}
+
+.turu-navbar__container {
+
+  margin: 0 auto;
+  height: 80px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (min-width: 1024px) {
+  .turu-navbar__container {
+    padding: 0 28px;
+  }
+}
+
+.turu-navbar__logo-link {
+  display: flex;
+  align-items: center;
+}
+
+.turu-navbar__logo-img {
+  height: 56px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Desktop Navigation */
+.turu-navbar__desktop {
+  display: none;
+  align-items: center;
+  gap: 40px;
+}
+@media (min-width: 768px) {
+  .turu-navbar__desktop {
+    display: flex;
+  }
+}
+
+.turu-navbar__link {
+  position: relative;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #263B6A;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+.turu-navbar__link:hover {
+  opacity: 0.7;
+}
+
+/* Dropdown */
+.turu-navbar__dropdown-wrapper {
+  position: relative;
+}
+
+.turu-navbar__dropdown-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #263B6A;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+.turu-navbar__dropdown-btn:hover {
+  opacity: 0.7;
+}
+
+.turu-navbar__dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 16px;
+  width: 240px;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(160, 213, 133, 0.4);
+}
+
+.turu-navbar__dropdown-item {
+  display: block;
+  padding: 16px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #263B6A;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+.turu-navbar__dropdown-item:hover {
+  background-color: rgba(160, 213, 133, 0.2);
+}
+
+/* Mobile Button */
+.turu-navbar__mobile-btn {
+  display: block;
+  color: #263B6A;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  .turu-navbar__mobile-btn {
+    display: none;
+  }
+}
+
+/* Mobile Offcanvas */
+.turu-navbar__overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 60;
+}
+
+.turu-navbar__offcanvas {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 70;
+  height: 100%;
+  width: 82vw;
+  max-width: 384px;
+  background-color: #A0D585;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+}
+
+.turu-navbar__offcanvas-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.turu-navbar__offcanvas-logo {
+  height: 48px;
+  width: auto;
+}
+
+.turu-navbar__offcanvas-close {
+  color: #263B6A;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.turu-navbar__offcanvas-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.turu-navbar__offcanvas-link {
+  display: block;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(38, 59, 106, 0.1);
+  color: #263B6A;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.turu-navbar__offcanvas-footer {
+  margin-top: auto;
+  padding-top: 32px;
+  border-top: 1px solid rgba(38, 59, 106, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.turu-navbar__social-link {
+  color: #263B6A;
+  transition: opacity 0.3s;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+.turu-navbar__social-link:hover {
+  opacity: 0.7;
+}
+
+/* Mobile Programme Dropdown inside Offcanvas */
+.turu-navbar__mobile-prog-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(38, 59, 106, 0.1);
+  color: #263B6A;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 14px;
+  font-weight: 600;
+  background: none;
+  cursor: pointer;
+}
+
+.turu-navbar__mobile-prog-menu {
+  overflow: hidden;
+}
+
+.turu-navbar__mobile-prog-item {
+  display: block;
+  padding: 12px 0 12px 20px;
+  font-size: 14px;
+  color: rgba(38, 59, 106, 0.85);
+  border-bottom: 1px solid rgba(38, 59, 106, 0.1);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.turu-navbar__mobile-prog-item:hover {
+  color: #263B6A;
+}

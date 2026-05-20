@@ -1,0 +1,109 @@
+/* src/components/AboutSection.css */
+.turu-about {
+  background-color: var(--color-bg-light);
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 100px 7vw;
+}
+
+.turu-about__grid {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.turu-about__left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.turu-about__img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: contain;
+}
+
+.turu-about__right {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.turu-about__jp-ghost {
+  font-family: var(--font-japanese);
+  font-size: 30px;
+  color: var(--color-primary);
+  opacity: 0.95;
+  white-space: nowrap;
+  user-select: none;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.turu-about__heading {
+  font-family: var(--font-heading);
+  font-size: clamp(32px, 4vw, 56px);
+  color: var(--color-primary);
+  line-height: 1.2;
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 1;
+}
+
+.turu-about__text {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-primary);
+  line-height: 1.8;
+  margin-bottom: 24px;
+  text-transform: capitalize;
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+}
+
+.turu-about__cta {
+  margin-top: 16px;
+  display: inline-flex;
+  position: relative;
+  z-index: 2;
+}
+
+.turu-about__japan-map {
+  position: absolute;
+  bottom: -80px;
+  right: -80px;
+  width: 250px;
+  height: auto;
+  object-fit: contain;
+  z-index: 0;
+}
+
+@media (max-width: 1024px) {
+  .turu-about__grid {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+  .turu-about__japan-map {
+    position: relative;
+    right: 0;
+    bottom: 0;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .turu-about__text {
+    margin: 0 auto 24px auto;
+  }
+}
