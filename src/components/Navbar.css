@@ -13,14 +13,14 @@
 
   margin: 0 auto;
   height: 80px;
-  padding: 0 24px;
+  padding: 0 44px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 @media (min-width: 1024px) {
   .turu-navbar__container {
-    padding: 0 28px;
+    padding: 0 48px;
   }
 }
 
@@ -30,7 +30,7 @@
 }
 
 .turu-navbar__logo-img {
-  height: 56px;
+  height: 86px;
   width: auto;
   object-fit: contain;
 }

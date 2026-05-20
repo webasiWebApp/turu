@@ -715,6 +715,18 @@
   .division-card { flex: 0 0 calc(85% - 10px); }
   .team__grid { grid-template-columns: 1fr; }
   .team__pagoda { display: none; }
+  .team__layout {
+    flex-direction: column-reverse;
+    gap: 40px;
+  }
+  .team__avatars {
+    max-width: 100%;
+    width: 100%;
+  }
+  .team__content {
+    max-width: 100%;
+    width: 100%;
+  }
   .testimonials__grid { grid-template-columns: 1fr; }
   .footer__top { grid-template-columns: 1fr 1fr; }
   .hero__image-strip { grid-template-columns: repeat(2, 1fr); height: 160px; }

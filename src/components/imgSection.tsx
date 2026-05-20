@@ -3,8 +3,13 @@ import img2 from '../assets/secondSec/img2.png';
 import img3 from '../assets/secondSec/img3.png';
 import img4 from '../assets/secondSec/img4.png';
 
-export default function ImgSection() {
-  const images = [img1, img2, img3, img4];
+interface ImgSectionProps {
+  images?: string[];
+}
+
+export default function ImgSection({ images }: ImgSectionProps) {
+  const defaultImages = [img1, img2, img3, img4];
+  const displayImages = images && images.length > 0 ? images : defaultImages;
 
   return (
     <section className="turu-img-section">
@@ -40,16 +45,16 @@ export default function ImgSection() {
         }
         @media (max-width: 600px) {
           .turu-img-section {
-            grid-template-columns: 1fr;
-            height: auto;
+            grid-template-columns: repeat(2, 1fr);
+            height: 300px;
           }
           .turu-img-section img {
-            height: 240px;
+            height: 100%;
           }
         }
       `}</style>
       
-      {images.map((src, index) => (
+      {displayImages.map((src, index) => (
         <img key={index} src={src} alt={`Showcase ${index + 1}`} />
       ))}
     </section>

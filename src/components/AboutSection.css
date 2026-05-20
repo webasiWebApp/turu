@@ -95,6 +95,9 @@
     text-align: center;
     gap: 40px;
   }
+  .turu-about__right {
+    align-items: center;
+  }
   .turu-about__japan-map {
     position: relative;
     right: 0;
