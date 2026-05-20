@@ -14,18 +14,18 @@
  *   2. Use <JapaneseText words={[...]} /> anywhere inside it
  */
 
-import { createContext, useContext, useEffect, useRef, useState } from "react";
+import { createContext, useContext, useEffect, useRef, useState, type ReactNode } from "react";
 import { AnimatePresence, motion, useMotionValue, useSpring } from "framer-motion";
 
 // ─── Context ────────────────────────────────────────────────────────────────
 
 const MouseContext = createContext({ x: -300, y: -300 });
 
-export function JapaneseRevealProvider({ children }) {
+export function JapaneseRevealProvider({ children }: { children: ReactNode }) {
   const [pos, setPos] = useState({ x: -300, y: -300 });
 
   useEffect(() => {
-    const handler = (e) => setPos({ x: e.clientX, y: e.clientY });
+    const handler = (e: MouseEvent) => setPos({ x: e.clientX, y: e.clientY });
     window.addEventListener("mousemove", handler);
     return () => window.removeEventListener("mousemove", handler);
   }, []);
@@ -42,7 +42,7 @@ export function JapaneseRevealProvider({ children }) {
 
 // ─── Cursor ──────────────────────────────────────────────────────────────────
 
-function OutlineCursor({ pos }) {
+function OutlineCursor({ pos }: { pos: { x: number; y: number } }) {
   const x = useSpringValue(pos.x, { damping: 22, stiffness: 280, mass: 0.4 });
   const y = useSpringValue(pos.y, { damping: 22, stiffness: 280, mass: 0.4 });
 
@@ -72,12 +72,24 @@ function OutlineCursor({ pos }) {
 }
 
 // Tiny hook — spring-animates a MotionValue
-function useSpringValue(initial, config) {
+function useSpringValue(initial: number, config?: any) {
   const mv = useMotionValue(initial);
   return useSpring(mv, config);
 }
 
 // ─── JapaneseText ────────────────────────────────────────────────────────────
+
+interface WordItem {
+  id: string;
+  en: string;
+  ja: string;
+}
+
+interface JapaneseTextProps {
+  words: WordItem[];
+  circleRadius?: number;
+  className?: string;
+}
 
 /**
  * Props:
@@ -86,7 +98,7 @@ function useSpringValue(initial, config) {
  *   circleRadius — number, default 30 (px). Match your cursor width/2.
  *   className    — extra classes for the wrapper <span>
  */
-export function JapaneseText({ words, circleRadius = 30, className = "" }) {
+export function JapaneseText({ words, circleRadius = 30, className = "" }: JapaneseTextProps) {
   const mousePos = useContext(MouseContext);
   const wordRefs = useRef<Record<string, HTMLElement | null>>({});
   const [activeIds, setActiveIds] = useState<Set<string>>(new Set());

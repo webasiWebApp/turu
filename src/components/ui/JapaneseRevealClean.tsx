@@ -1,5 +1,5 @@
 // src/components/ui/JapaneseRevealClean.tsx
-import { createContext, useContext, useEffect, useRef, useState, ReactNode } from "react";
+import { createContext, useContext, useEffect, useRef, useState, type ReactNode } from "react";
 import { AnimatePresence, motion, useMotionValue, useSpring } from "framer-motion";
 
 interface MousePos { x: number; y: number; }

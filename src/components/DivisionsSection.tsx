@@ -1,9 +1,8 @@
 // src/components/DivisionsSection.tsx
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { useInView } from "../hooks/useInView";
-import { useEffect, useRef, useState, UIEvent } from "react";
+import { useEffect, useRef, useState, type UIEvent } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import heroImg from "../assets/hero.png";
 
 const divisions = [
   {
@@ -32,7 +31,7 @@ const divisions = [
   }
 ];
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 28 },
   visible: (i: number) => ({
     opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut", delay: i * 0.12 },

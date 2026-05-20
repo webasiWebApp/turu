@@ -1,5 +1,5 @@
 // src/components/TeamSection.tsx
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { useInView } from "../hooks/useInView";
 import { useNavigate } from "react-router-dom";
 
@@ -21,7 +21,7 @@ export default function TeamSection() {
   const [ref, inView] = useInView({ threshold: 0.2, triggerOnce: true });
   const navigate = useNavigate();
 
-  const fadeUp = {
+  const fadeUp: Variants = {
     hidden: { opacity: 0, y: 24 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
   };

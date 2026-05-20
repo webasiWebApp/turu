@@ -1,5 +1,5 @@
 // src/components/AboutSection.tsx
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { useRef } from "react";
 import { useInView } from "../hooks/useInView";
 import aboutImg from "../assets/aboutImg.png";
@@ -7,7 +7,7 @@ import japanMap from "../assets/japan.png";
 import Button from "./Button";
 import "./AboutSection.css";
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 24 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: "easeOut" } },
 };
