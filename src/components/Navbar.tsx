@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, Menu, X } from "lucide-react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 import "./Navbar.css"; // Import the vanilla CSS styles
 
@@ -40,7 +40,6 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [programmeOpen, setProgrammeOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const location = useLocation();
 
   const dropdownRef = useRef<HTMLDivElement>(null);
 
