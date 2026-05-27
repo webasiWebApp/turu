@@ -1,0 +1,245 @@
+.turu-cafe {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--color-bg-light);
+  align-items: center;
+  padding: 140px 24px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.turu-cafe__jp-bg {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-japanese);
+  font-size: clamp(60px, 12vw, 160px);
+  color: var(--color-primary);
+  opacity: 0.04;
+  line-height: 1.1;
+  text-align: center;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+  white-space: nowrap;
+}
+
+.turu-cafe__container {
+  max-width: 900px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+.turu-cafe__hero-header {
+  margin-bottom: 48px;
+}
+
+.turu-cafe__tag {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  background: rgba(38, 59, 106, 0.05);
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin-bottom: 24px;
+}
+
+.turu-cafe__title {
+  font-family: var(--font-heading);
+  font-size: clamp(40px, 6vw, 64px);
+  color: var(--color-primary);
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.turu-cafe__subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(16px, 2.5vw, 22px);
+  color: var(--color-primary);
+  margin-bottom: 32px;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.turu-cafe__quote {
+  font-family: var(--font-heading);
+  font-size: clamp(20px, 3vw, 26px);
+  color: var(--color-accent);
+  font-style: italic;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.turu-cafe__main-img-wrapper {
+  width: 100%;
+  margin-bottom: 48px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(38, 59, 106, 0.15);
+}
+
+.turu-cafe__main-img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.turu-cafe__main-img-wrapper:hover .turu-cafe__main-img {
+  transform: scale(1.03);
+}
+
+.turu-cafe__text {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--color-primary);
+  opacity: 0.85;
+  line-height: 1.8;
+  margin-bottom: 48px;
+  max-width: 750px;
+  text-align: left;
+}
+
+.turu-cafe__text p {
+  margin-bottom: 24px;
+}
+
+.turu-cafe__text p:last-child {
+  margin-bottom: 0;
+}
+
+.turu-cafe__secondary-images {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  width: 100%;
+  margin-bottom: 48px;
+}
+
+@media (min-width: 768px) {
+  .turu-cafe__secondary-images {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.turu-cafe__secondary-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(38, 59, 106, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.turu-cafe__secondary-img:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(38, 59, 106, 0.15);
+}
+
+.turu-cafe__divider {
+  border: none;
+  border-top: 1px solid var(--color-accent);
+  opacity: 0.6;
+  margin: 24px 0 64px;
+  width: 80px;
+}
+
+.turu-cafe__heading {
+  font-family: var(--font-heading);
+  font-size: clamp(28px, 4vw, 40px);
+  color: var(--color-primary);
+  margin-bottom: 48px;
+  letter-spacing: 0.05em;
+}
+
+/* Feature Cards Grid */
+.turu-cafe__features {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .turu-cafe__features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .turu-cafe__features {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.turu-cafe__feature-card {
+  background: var(--color-white);
+  border: 1px solid rgba(160, 213, 133, 0.2);
+  padding: 32px 24px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.turu-cafe__feature-card:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(38, 59, 106, 0.08);
+}
+
+.turu-cafe__feature-icon-wrapper {
+  width: 56px;
+  height: 56px;
+  background: rgba(160, 213, 133, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: var(--color-accent);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.turu-cafe__feature-card:hover .turu-cafe__feature-icon-wrapper {
+  background: var(--color-accent);
+  color: var(--color-primary);
+}
+
+.turu-cafe__feature-icon {
+  font-size: 24px;
+}
+
+.turu-cafe__feature-title {
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 12px;
+}
+
+.turu-cafe__feature-desc {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--color-primary);
+  opacity: 0.75;
+  line-height: 1.6;
+}

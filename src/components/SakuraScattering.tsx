@@ -48,6 +48,7 @@ export default function SakuraScattering() {
         height: '100%',
         pointerEvents: 'none',
         overflow: 'hidden',
+        display:'none',
         zIndex: 2,
       }}
     >

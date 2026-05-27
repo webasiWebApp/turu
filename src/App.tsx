@@ -15,6 +15,10 @@ import FAQSection from './components/FAQSection'
 import Footer from './components/Footer'
 import TeamDetails from './components/TeamDetails'
 import SakuraScattering from './components/SakuraScattering'
+import AboutUs from '../Pages/AboutUs'
+import TuruCafe from '../Pages/TuruCafe'
+import MicroS from '../Pages/MicroS'
+import JBTuru from '../Pages/JBTuru'
 
 const faqSectionImages = [
   "https://images.unsplash.com/photo-1526481280693-3bfa7568e0f3?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -80,6 +84,10 @@ export default function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/turu-cafe" element={<TuruCafe />} />
+          <Route path="/microservice" element={<MicroS />} />
+          <Route path="/japanese-by-turu" element={<JBTuru />} />
           <Route path="/team/:id" element={<TeamDetails />} />
         </Routes>
         <Footer />

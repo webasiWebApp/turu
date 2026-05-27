@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/logo.png";
 import "./Navbar.css"; // Import the vanilla CSS styles
 
@@ -25,20 +26,21 @@ function FacebookIcon({
 }
 
 const programmeItems = [
-  { label: "Japanese by TURU", href: "#japanese-by-turu" },
-  { label: "Turu Cafe", href: "#turu-cafe" },
-  { label: "MicroService", href: "#microservice" },
+  { label: "Japanese by TURU", href: "/japanese-by-turu" },
+  { label: "Turu Cafe", href: "/turu-cafe" },
+  { label: "MicroService", href: "/microservice" },
 ];
 
 const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About Us", href: "#about" },
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/about" },
 ];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [programmeOpen, setProgrammeOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const location = useLocation();
 
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -97,24 +99,24 @@ export default function Navbar() {
       >
         <div className="turu-navbar__container">
           {/* Logo */}
-          <a href="#home" className="turu-navbar__logo-link">
+          <Link to="/" className="turu-navbar__logo-link">
             <img
               src={logo}
               alt="Japanese by TURU"
               className="turu-navbar__logo-img"
             />
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="turu-navbar__desktop">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.label}
-                href={link.href}
+                to={link.href}
                 className="turu-navbar__link"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
 
             {/* Programme Dropdown */}
@@ -145,19 +147,20 @@ export default function Navbar() {
                     className="turu-navbar__dropdown-menu"
                   >
                     {programmeItems.map((item, index) => (
-                      <motion.a
+                      <motion.div
                         key={item.label}
-                        href={item.href}
                         initial={{ opacity: 0, x: 10 }}
                         animate={{ opacity: 1, x: 0 }}
-                        transition={{
-                          delay: index * 0.05,
-                        }}
-                        className="turu-navbar__dropdown-item"
-                        onClick={() => setProgrammeOpen(false)}
+                        transition={{ delay: index * 0.05 }}
                       >
-                        {item.label}
-                      </motion.a>
+                        <Link
+                          to={item.href}
+                          className="turu-navbar__dropdown-item"
+                          onClick={() => setProgrammeOpen(false)}
+                        >
+                          {item.label}
+                        </Link>
+                      </motion.div>
                     ))}
                   </motion.div>
                 )}
@@ -221,17 +224,20 @@ export default function Navbar() {
               {/* Links */}
               <nav className="turu-navbar__offcanvas-nav">
                 {navLinks.map((link, index) => (
-                  <motion.a
+                  <motion.div
                     key={link.label}
-                    href={link.href}
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.06 }}
-                    className="turu-navbar__offcanvas-link"
-                    onClick={() => setMobileOpen(false)}
                   >
-                    {link.label}
-                  </motion.a>
+                    <Link
+                      to={link.href}
+                      className="turu-navbar__offcanvas-link"
+                      onClick={() => setMobileOpen(false)}
+                    >
+                      {link.label}
+                    </Link>
+                  </motion.div>
                 ))}
 
                 {/* Mobile Programme */}
@@ -292,17 +298,20 @@ function MobileProgramme({
             className="turu-navbar__mobile-prog-menu"
           >
             {programmeItems.map((item, index) => (
-              <motion.a
+              <motion.div
                 key={item.label}
-                href={item.href}
                 initial={{ opacity: 0, x: 10 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.05 }}
-                className="turu-navbar__mobile-prog-item"
-                onClick={onClose}
               >
-                {item.label}
-              </motion.a>
+                <Link
+                  to={item.href}
+                  className="turu-navbar__mobile-prog-item"
+                  onClick={onClose}
+                >
+                  {item.label}
+                </Link>
+              </motion.div>
             ))}
           </motion.div>
         )}
