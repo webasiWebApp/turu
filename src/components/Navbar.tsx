@@ -28,7 +28,7 @@ function FacebookIcon({
 const programmeItems = [
   { label: "Japanese by TURU", href: "/japanese-by-turu" },
   { label: "Turu Cafe", href: "/turu-cafe" },
-  { label: "MicroService", href: "/microservice" },
+  { label: "MicroFinance", href: "/microfinance" },
 ];
 
 const navLinks = [

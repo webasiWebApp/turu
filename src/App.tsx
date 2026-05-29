@@ -86,7 +86,7 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/turu-cafe" element={<TuruCafe />} />
-          <Route path="/microservice" element={<MicroS />} />
+          <Route path="/microfinance" element={<MicroS />} />
           <Route path="/japanese-by-turu" element={<JBTuru />} />
           <Route path="/team/:id" element={<TeamDetails />} />
         </Routes>
