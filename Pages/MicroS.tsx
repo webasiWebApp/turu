@@ -27,7 +27,7 @@ export default function MicroS() {
   return (
     <main className="micro-s">
       <div className="micro-s__jp-bg">
-        マイクロサービス
+        マイクロファイナンス
       </div>
 
       <motion.div 
@@ -37,9 +37,9 @@ export default function MicroS() {
         className="micro-s__container"
       >
         <div className="micro-s__hero-header">
-          <span className="micro-s__tag">Turu MicroService</span>
+          <span className="micro-s__tag">Turu MicroFinance</span>
           <h1 className="micro-s__title">
-            MicroService
+            MicroFinance
           </h1>
           <h2 className="micro-s__subtitle">
             Education, microfinance & youth empowerment.
@@ -51,22 +51,22 @@ export default function MicroS() {
 
         {/* Hero Image */}
         <div className="micro-s__main-img-wrapper">
-          <img src={images[0]} alt="Turu MicroService Youth" className="micro-s__main-img" />
+          <img src={images[0]} alt="Turu MicroFinance Youth" className="micro-s__main-img" />
         </div>
 
         <div className="micro-s__text micro-s__text--large">
           <p>
-            <strong>Turu MicroService exists because we believe the most talented people are not always the most privileged.</strong> We remove financial barriers standing between determined Sri Lankan youth and life-changing opportunities — through microfinance, mentorship, financial literacy, and career guidance built for real people in real situations.
+            <strong>Turu MicroFinance exists because we believe the most talented people are not always the most privileged.</strong> We remove financial barriers standing between determined Sri Lankan youth and life-changing opportunities — through microfinance, mentorship, financial literacy, and career guidance built for real people in real situations.
           </p>
           <p>
-            Turu MicroService is our commitment to long-term social and economic development. We work alongside students, young professionals, and families who have the drive to grow but need the tools, guidance, and financial access to get started. From loan facilitation and budget planning to full career mentorship, we walk the journey with you — not just to Japan, but toward lasting financial independence.
+            Turu MicroFinance is our commitment to long-term social and economic development. We work alongside students, young professionals, and families who have the drive to grow but need the tools, guidance, and financial access to get started. From loan facilitation and budget planning to full career mentorship, we walk the journey with you — not just to Japan, but toward lasting financial independence.
           </p>
         </div>
 
         {/* Two smaller images */}
         <div className="micro-s__secondary-images">
-          <img src={images[1]} alt="Turu MicroService Support" className="micro-s__secondary-img" />
-          <img src={images[2]} alt="Turu MicroService Education" className="micro-s__secondary-img" />
+          <img src={images[1]} alt="Turu MicroFinance Support" className="micro-s__secondary-img" />
+          <img src={images[2]} alt="Turu MicroFinance Education" className="micro-s__secondary-img" />
         </div>
 
         <hr className="micro-s__divider" />
@@ -194,7 +194,7 @@ export default function MicroS() {
               Mission Statement
             </h3>
             <p className="micro-s__mission-text">
-              Education and international opportunity can transform not just individuals — but entire families and communities. Turu MicroService exists to make that transformation possible for everyone, regardless of background.
+              Education and international opportunity can transform not just individuals — but entire families and communities. Turu MicroFinance exists to make that transformation possible for everyone, regardless of background.
             </p>
 
             <div className="micro-s__links">
